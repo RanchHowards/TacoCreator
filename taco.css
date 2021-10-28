@@ -1,0 +1,166 @@
+:root {
+	--celadon-green: #048a81ff;
+	--candy-pink: #e76b74ff;
+	--caribbean-green: #06d6a0ff;
+	--vivid-sky-blue: #54c6ebff;
+	--blue-bell: #8a89c0ff;
+}
+
+body {
+	background-color: pink;
+	font-family: 'Short Stack', cursive;
+}
+#recipe p {
+	font-family: 'Gloria Hallelujah', cursive;
+}
+h1{
+	text-align: center;
+	color: var(--blue-bell);
+	font-size: 4em;
+	font-weight: bolder;
+	margin: 0 auto 10px auto;
+	
+}
+
+h2{
+	text-align: center;
+	color: var(--blue-bell);
+	font-size: 2em;
+	font-weight: bold;
+	margin: 0 auto 10px auto;
+}
+h3, h4{
+	color: var(--blue-bell);
+	font-size: 1.5em;
+	font-weight: bold;
+}
+#container{
+	display: grid;
+	grid-template-rows: auto 1fr;
+}
+#btn {
+	display: block;
+	margin: 0 auto;	
+	/* transform: translateY(0); */
+	transition: all 2s ease-out;
+}
+.start{
+	transform: translateY(30vh) scale(2);
+
+}
+#row2{
+	display: grid;
+	grid-template-columns: minmax(200px, 25%) 1fr minmax(200px, 25%);
+}
+
+#ingredients {
+	grid-column: 1;
+}
+
+#recipeArea {
+	grid-column: 2;
+	padding: 20px;
+}
+
+img{
+	transition: transform .1s;
+	transform: scale(1);
+}
+/* img:hover{
+animation: pulse 1s infinite;
+} */
+@keyframes pulse {
+0%{
+	transform: scale(1);
+}
+50%{
+	transform: scale(1.1);
+}
+100%{
+	transform: scale(1);
+}
+}
+
+ul{
+	list-style: none;
+}
+#list {
+	
+	padding: 0;
+
+}
+#list span {
+	vertical-align: middle;
+	/* margin: auto 10px; */
+	left: 45px;
+	font-size: 1em;
+	position: absolute;
+	
+}
+#list span:hover {
+	animation: pulseSpan .5s infinite;
+}
+@keyframes pulseSpan {
+	0%{
+		font-size: 1em;
+	}
+	50%{
+		font-size: 1.5em;
+		
+	}
+	100%{
+		font-size: 1em;
+	}
+	}
+
+#list li {
+	margin: 25px 20px;
+	padding: 10px 0 10px 50px;
+	/* height: 30px; */
+	border-radius: 10px 0 0 10px;
+	font-size: 1em;
+	transition: all .2s;
+	
+}
+#list .active {
+	background-color: var(--vivid-sky-blue);
+	border-radius: 10px;
+	border: 2px solid var(--blue-bell);
+	
+	z-index: 2;
+}
+#recipe{
+	border-radius: 10px;
+	margin: 0;
+	opacity: 0;
+	transition: opacity .3s ease-in;
+}
+.col2{
+	background-color: pink;
+	transition: background-color .2s;
+}
+
+.activeCol2 {
+	background-color: var(--vivid-sky-blue);
+	border-radius: 10px;
+	border: 2px solid var(--blue-bell);
+	z-index: -1;
+	
+}
+#recipeArea .activeRecipe {
+	opacity: 1;
+}
+
+#list li:hover {
+font-weight: bolder;
+color: whitesmoke;
+cursor: pointer;
+
+}
+
+
+
+#recipe ul li::before {
+	content: '\1F32E';
+	margin-right: 15px;
+}
